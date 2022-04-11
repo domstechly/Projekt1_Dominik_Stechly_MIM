@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/normalfragment">
+
+    <fragment
+        android:id="@+id/normalfragment"
+        android:name="com.example.weatherapp.NormalFragment"
+        android:label=""
+        tools:layout="@layout/mainscreen">
+
+        <action
+            android:id="@+id/action_normalfragment_to_elderfragment"
+            app:destination="@id/elderfragment" />
+        <argument
+            android:name="currentCity"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/elderfragment"
+        android:name="com.example.weatherapp.ElderFragment"
+        android:label=""
+        tools:layout="@layout/elderscreen">
+        <argument
+            android:name="currentCity"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_elderfragment_to_normalfragment"
+            app:destination="@id/normalfragment" />
+    </fragment>
+</navigation>
